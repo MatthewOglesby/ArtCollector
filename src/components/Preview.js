@@ -44,8 +44,8 @@ const Preview = (props) => {
   return <aside id="preview">
     <header className="pagination">
       {/* This button should be disabled if nothing is set in info.prev, and should call fetchPage with info.prev when clicked */}
-      <button 
-        disabled={(!info.prev)} 
+      <button
+        disabled={(!info.prev)}
         className="previous"
         onClick={() => fetchPage(info.prev)}>Previous</button>
       {/* This button should be disabled if nothing is set in info.next, and should call fetchPage with info.next when clicked */}
@@ -55,27 +55,7 @@ const Preview = (props) => {
         onClick={() => fetchPage(info.next)}>Next</button>
     </header>
     <section className="results">
-
-      
-      {/* {records.map(record) =>
-          return <div  
-            key={ index }
-            className="object-preview"
-            onClick={(event) => {
-              event.preventDefault()
-              // set the featured result to be this record, using setFeaturedResult
-              setFeaturedResult(record)
-            }}>
-            { 
-              // if  (record.primaryimageurl)<img src={ record.primaryimageurl } alt={ record.description } />, otherwise show nothing 
-            }
-            {
-              // if the record.title exists, add this: <h3>{ record.title }</h3>, otherwise show this: <h3>MISSING INFO</h3>
-            }
-          </div>
-
-      } */}
-      {  records.map((record, idx) => {
+      {records.map((record, idx) => {
         return <div
           key={idx}
           className="object-preview"
@@ -86,7 +66,7 @@ const Preview = (props) => {
           {record.primaryimageurl ? <img src={record.primaryimageurl} alt={record.description} /> : null}
           {record.title ? <h3>{record.title}</h3> : <h3>MISSING INFO</h3>}
         </div>
-          })},
+      })},
 
 
 
